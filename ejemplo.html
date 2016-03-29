@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>Retorno riesgo ALM</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link href="static/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="static/css/animate.min.css" rel="stylesheet" />
+	<link href="static/css/style.min.css" rel="stylesheet" />
+	<link href="static/css/style-responsive.min.css" rel="stylesheet" />
+	<link href="static/css/theme/default.css" rel="stylesheet" id="theme" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="static/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+	<link href="static/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="static/plugins/pace/pace.min.js"></script>
+	<script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE CSS ================== -->
+    <link href="static/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
+	<!-- ================== END PAGE CSS ================== -->
+</head>
+<body>
+	<!-- begin #page-loader -->
+	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+	<!-- end #page-loader -->
+	
+	<!-- begin #page-container -->
+	<div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+		<!-- begin #header -->
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+			<div class="container-fluid">
+				<!-- begin mobile sidebar expand / collapse button -->
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"><span class="navbar-logo"></span>  Admin</a>
+					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<!-- end mobile sidebar expand / collapse button -->
+				
+			
+			</div>
+			<!-- end container-fluid -->
+		</div>
+		<!-- end #header -->
+		
+		
+		<!-- begin #content -->
+		<div id="content" class="content">
+			<!-- begin breadcrumb -->
+			<ol class="breadcrumb pull-right">
+				<li><a href="javascript:;">Retorno</a></li>
+				<li><a href="javascript:;">VEN</a></li>
+				<li class="active">Detalle tasas</li>
+			</ol>
+			<!-- end breadcrumb -->
+			<!-- begin page-header -->
+			<h1 class="page-header">Riesgo Retorno ALM <small>riesgo retorno ALM...</small></h1>
+			<!-- end page-header -->
+
+			
+			<!-- begin row -->
+			<div class="row">
+			    <!-- begin col-12 -->
+			    <div class="col-md-12">
+			        <!-- begin panel -->
+                    <div class="panel panel-inverse">
+                        <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Data Table - Default</h4>
+                        </div>
+                        <div class="panel-body">
+                            <table id="data-table" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Rendering engine</th>
+                                        <th>Browser</th>
+                                        <th>Platform(s)</th>
+                                        <th>Engine version</th>
+                                        <th>CSS grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 4.0</td>
+                                        <td>Win 95+</td>
+                                        <td>4</td>
+                                        <td>X</td>
+                                    </tr>
+                                    <tr >
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 5.0</td>
+                                        <td>Win 95+</td>
+                                        <td>5</td>
+                                        <td>C</td>
+                                    </tr>
+                                    <tr >
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 5.5</td>
+                                        <td>Win 95+</td>
+                                        <td>5.5</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr >
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 6</td>
+                                        <td>Win 98+</td>
+                                        <td>6</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr >
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 7</td>
+                                        <td>Win XP SP2+</td>
+                                        <td>7</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr >
+                                        <td>Trident</td>
+                                        <td>AOL browser (AOL desktop)</td>
+                                        <td>Win XP</td>
+                                        <td>6</td>
+                                        <td>A</td>
+                                    </tr>
+                                    <tr >
+                                        <td>Gecko</td>
+                                        <td>Firefox 1.0</td>
+                                        <td>Win 98+ / OSX.2+</td>
+                                        <td>1.7</td>
+                                        <td>A</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-12 -->
+            </div>
+            <!-- end row -->
+						
+			<!-- begin row -->
+			<div class="row">
+			    <!-- begin col-6 -->
+			    <div class="col-md-6">
+			        <div class="panel panel-inverse">
+			            <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Stacked Area Chart</h4>
+			            </div>
+			            <div class="panel-body">
+			                <!-- <div id="nv-stacked-area-chart" class="height-sm"></div>
+			                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+
+							<div id="5befefd7-4273-4648-af6f-03f0ef24fdab" style="height: 100%; width: 100%;" class="plotly-graph-div"></div>
+							<script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("5befefd7-4273-4648-af6f-03f0ef24fdab", [{"name": "base ME", "marker": {"size": 8}, "yaxis": "y1", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [0.35058774288260336, 0.41058774288260336, 0.47058774288260335, 0.5705877428826034, 0.7955877428826034, 1.3705877428826032, 2.6048655531865084, 2.675531189392233, 2.8457471070459706, 3.0232785438369936, 3.298137767626752, 3.546914722340544, 3.7695694362254617, 3.95422500425342, 4.4986929170313505, 5.340781959640917], "type": "scatter", "mode": "lines+markers"}, {"name": "shock ME", "marker": {"size": 8}, "yaxis": "y1", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [0.5784460011748038, 0.6169698117112432, 0.6553109835480297, 0.7314416567327786, 0.9000150015682884, 1.225641417516754, 1.6354360178347571, 2.017156597252878, 2.3711206931010365, 2.6981225009214294, 2.9993128197575603, 3.2760892194204416, 3.530001420571538, 3.7626738445161623, 4.733420664935695, 5.676207139176448], "type": "scatter", "mode": "lines+markers"}, {"name": "Gaps ME", "marker": {"color": "red"}, "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [270586.9028231955, 93057.22536940638, -9738.732622971678, -26778.52620973209, -28540.993312979474, -8045.235461486158, -11940.904327146865, -149171.2604010487, -118773.10992832003, -6397.415954684697, 8287.540573107834, -45437.61524185974, 15412.426148423345, 4654.8313883229885, 25820.66000539399, 1038.8306430108762], "type": "bar"}], {"yaxis2": {"side": "right", "title": "Gaps", "overlaying": "y"}, "yaxis": {"title": "Tasas"}, "title": "TT en dolares"}, {"linkText": "Export to plot.ly", "showLink": true})</script>
+			            </div>
+			        </div>
+			    </div>
+			    <!-- end col-6 -->
+			    <!-- begin col-6 -->
+			    <div class="col-md-6">
+			        <div class="panel panel-inverse">
+			            <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Stacked Bar Chart</h4>
+			            </div>
+			            <div class="panel-body">
+			                <!-- <div id="nv-stacked-bar-chart" class="height-sm"></div> 
+							<script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>-->
+
+							<div id="5befefd7-4273-4648-af6f-03f0ef24fdab1" style="height: 100%; width: 100%;" class="plotly-graph-div"></div>
+							<script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("5befefd7-4273-4648-af6f-03f0ef24fdab1", [{"name": "base ME", "marker": {"size": 8}, "yaxis": "y1", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [0.35058774288260336, 0.41058774288260336, 0.47058774288260335, 0.5705877428826034, 0.7955877428826034, 1.3705877428826032, 2.6048655531865084, 2.675531189392233, 2.8457471070459706, 3.0232785438369936, 3.298137767626752, 3.546914722340544, 3.7695694362254617, 3.95422500425342, 4.4986929170313505, 5.340781959640917], "type": "scatter", "mode": "lines+markers"}, {"name": "shock ME", "marker": {"size": 8}, "yaxis": "y1", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [0.5784460011748038, 0.6169698117112432, 0.6553109835480297, 0.7314416567327786, 0.9000150015682884, 1.225641417516754, 1.6354360178347571, 2.017156597252878, 2.3711206931010365, 2.6981225009214294, 2.9993128197575603, 3.2760892194204416, 3.530001420571538, 3.7626738445161623, 4.733420664935695, 5.676207139176448], "type": "scatter", "mode": "lines+markers"}, {"name": "Gaps ME", "marker": {"color": "red"}, "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [270586.9028231955, 93057.22536940638, -9738.732622971678, -26778.52620973209, -28540.993312979474, -8045.235461486158, -11940.904327146865, -149171.2604010487, -118773.10992832003, -6397.415954684697, 8287.540573107834, -45437.61524185974, 15412.426148423345, 4654.8313883229885, 25820.66000539399, 1038.8306430108762], "type": "bar"}], {"yaxis2": {"side": "right", "title": "Gaps", "overlaying": "y"}, "yaxis": {"title": "Tasas"}, "title": "TT en dolares"}, {"linkText": "Export to plot.ly", "showLink": true})</script>
+			            </div>
+			        </div>
+			    </div>
+			    <!-- end col-6 -->
+			</div>
+			<!-- end row -->
+			
+		</div>
+		<!-- end #content -->
+		
+        
+		
+		<!-- begin scroll to top btn -->
+		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+		<!-- end scroll to top btn -->
+	</div>
+	<!-- end page container -->
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="static/plugins/jquery/jquery-1.9.1.min.js"></script>
+	<script src="static/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+	<script src="static/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+	<script src="static/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="static/crossbrowserjs/html5shiv.js"></script>
+		<script src="static/crossbrowserjs/respond.min.js"></script>
+		<script src="static/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+	<script src="static/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="static/plugins/jquery-cookie/jquery.cookie.js"></script>
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="static/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+	<script src="static/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+	<script src="static/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+	<script src="static/js/table-manage-default.demo.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"></script>
+    <script src="static/plugins/nvd3/build/nv.d3.js"></script>
+	<script src="static/js/chart-d3.demo.min.js"></script>
+	<script src="static/js/apps.min.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+	<script>
+		$(document).ready(function() {
+			App.init();
+			ChartNvd3.init();
+			TableManageDefault.init();
+		});
+	</script>
+</body>
+</html>
