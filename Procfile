@@ -1,2 +1,2 @@
 web: gunicorn server:app
-worker: celery worker -A app.celery 
+worker: celery worker -A server.celery 
