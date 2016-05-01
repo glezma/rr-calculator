@@ -57,9 +57,10 @@ def long_task(self,*args):
 	plot_list_mn = results.plot_list_mn()
 	plot_list_me = results.plot_list_me()
 	string = render_template('Out_Tasas.html', nlen = nlen, table_ce = table_ce, scen_list = scen_list, table_list = table_list, plot_list_mn = plot_list_mn, plot_list_me = plot_list_me)
-	with open("Output.html", "w") as text_file:
-		print(" {}".format(string), file=text_file)
-	return {'current': 100, 'total': 100, 'status': 'Task completed!',
+	# with open("Output.html", "w") as text_file:
+		# print(" {}".format(string), file=text_file)
+	return string 
+	# {'current': 100, 'total': 100, 'status': 'Task completed!',
             'result': 1}
 
 @app.route('/', methods=['GET', 'POST'])
