@@ -79,7 +79,7 @@ def index():
 
 		form.image_file.data.save(fullfilename)
 		response = make_response(render_template('index.html', form=form, this_file=file_name,fullfilename=fullfilename))
-		# response.set_cookie('filename',json.dumps({'file': fullfilename}))
+		response.set_cookie('filename',json.dumps({'file': fullfilename}))
 		# session['filename'] = fullfilename
 		return response
 	else:
@@ -101,8 +101,8 @@ def process():
 	# import pdb; pdb.set_trace();
 	# print('iniciando apply_async')
 	filecookie = request.cookies.get('filename')
-
 	fullfilename = json.loads(filecookie)['file']
+	print(fullfilename)
 	task = long_task.apply_async((fullfilename,))
 	return jsonify({}), 202, {'Location': url_for('taskstatus',
                                                   task_id=task.id)}
