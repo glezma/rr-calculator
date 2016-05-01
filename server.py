@@ -61,7 +61,7 @@ def long_task(self,*args):
 		# print(" {}".format(string), file=text_file)
 	return string 
 	# {'current': 100, 'total': 100, 'status': 'Task completed!',
-            'result': 1}
+            # 'result': 1}
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
