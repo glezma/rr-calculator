@@ -1,5 +1,4 @@
 import numpy as np
-#import matplotlib.pyplot as plt
 import pandas as pd
 from flask import Markup
 class CIR:
@@ -70,7 +69,37 @@ class Gap:
 		self.scen_dates  = scen_dates
 		self.TC = TC
 		self.PE = PE
-	# def __repr__(self):
+	def __add__(self,other):
+		# gap1
+		gap_MN = self.gap_MN
+		gap_ME = self.gap_ME
+		tt_MN = self.tt_MN
+		tt_ME = self.tt_ME
+		buckets_num = self.buckets_num
+		buckets_lab = self.buckets_lab
+		scen_dates = self.scen_dates
+		TC = self.TC
+		PE = self.PE
+        # gap2
+		gap_MN1 = other.gap_MN
+		gap_ME1 = other.gap_ME
+		tt_MN1 = other.tt_MN
+		tt_ME1 = other.tt_ME
+		buckets_num1 = other.buckets_num
+		buckets_lab1 = other.buckets_lab
+		scen_dates1 = other.scen_dates
+		TC1 = other.TC
+		PE1 = other.PE
+        # Create sum object
+		gap_MNr = other.gap_MN
+		gap_MEr = other.gap_ME
+		tt_MNr = tt_MN
+		tt_MEr = tt_ME
+		gap_MNr = gap_MN + gap_MN1
+		gap_MEr = gap_ME + gap_ME1
+		sumation = self.__init__(gap_MNr, gap_MEr, tt_MNr, tt_MEr,
+			buckets_num, buckets_lab,scen_dates,TC,PE)
+		return sumation
 	# 	a = print(self.tt_MN)
 	# 	return a
 
@@ -117,9 +146,9 @@ class EcapResult:
 		self.CE_mn = shock_pv_mn-base_pv_mn
 		self.CE_me = shock_pv_me-base_pv_me
 		self.scen_dates = gap.scen_dates
-		self.CE_mn_pe = -self.CE_mn/gap.PE*100
-		self.CE_me_pe = -self.CE_me/gap.PE*gap.TC*100
-		self.CE_global_pe = -self.CE_global/gap.PE*100
+		self.CE_mn_pe = -self.CE_mn/gap.PE*100*(1-0.234)
+		self.CE_me_pe = -self.CE_me/gap.PE*gap.TC*100*(1-0.234)
+		self.CE_global_pe = -self.CE_global/gap.PE*100*(1-0.234)
 
 	def get_table_1(self):
 		df = pd.DataFrame(self.base_tt_mn.T.round(5)*100,columns=['Tasas base MN'],index=self.gap.buckets_lab)
@@ -204,10 +233,6 @@ class EcapResultsStack:
 				round(sd.shock_pv_mn,1)  , round(sd.shock_pv_me,1),  round(sd.shock_pv,1),
 				round(sd.CE_mn,1) , round(sd.CE_me,1) , round(sd.CE_global,1),
 				round(sd.CE_mn_pe,2),round(sd.CE_me_pe,2),round(sd.CE_global_pe,2)]
-			# data=[]
-			# for d in data1:
-			# 	print(round(d,2))
-			# 	data.append(round(d,2))
 			df.loc[sd.scen_dates]=data1
 		return df
 		
@@ -268,7 +293,7 @@ class EcapEngine:
 		self.model = model
 		self.correl = correl
 
-	def compute(self,n_sim):
+	def compute(self,n_sim,task):
 		n_var = 2
 		n_time = 12
 		dt = 1/n_time
@@ -281,10 +306,11 @@ class EcapEngine:
 		mat_eps_correl = self.normal_correl_shocks(n_sim,n_var,n_time,Omega)
 		mat_eps = mat_eps_correl[:,:,0].T
 		t1 = time.time()-t0
-		# print('El muestreo tomo {} segundos '.format(t1))
 		t0 = time.time() 		
 		sd_s = EcapResultsStack()
-		for ii in range(0,self.gap_stack.N):
+		total =self.gap_stack.N
+		print('total = {}'.format(total))
+		for ii in range(0,total):
 			base_pv_mn, base_tt_mn, shock_pv_mn_sa, shock_tt_mn_sa, yield_curves_mn_sa = self.get_ECAP_MN(ii,mat_eps,sim_opt)
 			base_pv_me, base_tt_me, shock_pv_me_sa, shock_tt_me_sa, yield_curves_me_sa = self.get_ECAP_ME(ii,mat_eps,sim_opt)
 			base_pv, shock_pv, shock_pv_mn, shock_pv_me, shock_tt_mn, shock_tt_me = \
@@ -293,9 +319,10 @@ class EcapEngine:
 				base_pv_me, shock_pv_me, base_tt_mn, base_tt_me,shock_tt_mn, 
 				shock_tt_me,shock_tt_mn_sa,shock_tt_me_sa ,self.gap_stack[ii] )
 			sd_s.append(sd)
-
+			task.update_state(state='PROGRESS',meta={'current': ii, 'total': total,
+                                'status': 'in progress'})
+			print(ii)
 		t1 = time.time()-t0
-		# print('El calculo tomo {} segundos '.format(t1))
 		
 		return sd_s
 
@@ -407,3 +434,52 @@ class EcapEngine:
 		shock_pv_mn = sim_pv_mn[indx]
 		shock_pv_me = sim_pv_me[indx]
 		return base_pv, shock_pv, shock_pv_mn, shock_pv_me, shock_tt_mn, shock_tt_me
+
+import openpyxl as opxl
+import xl_tools as xl
+
+class FileComputation:
+	def __init__(self, filename,task):
+		wb = opxl.load_workbook(filename, data_only=True, use_iterators=False)
+		xl_gap_MN = xl.xl_load(wb, 'gap_mn')
+		xl_tt_MN = xl.xl_load(wb, 'tt_mn')
+		xl_gap_ME = xl.xl_load(wb, 'gap_me')
+		xl_tt_ME = xl.xl_load(wb, 'tt_me')
+		xl_scendates = xl.xl_load(wb, 'scen')
+		buckets_num = xl.xl_load(wb, 'buckets_num')
+		buckets_label = xl.xl_load(wb, 'buckets_label')
+		TC = xl.xl_load(wb, 'tc')
+		PE = xl.xl_load(wb, 'pe')
+
+		kappa1 = 0.0554327
+		sigma21 = 0.0709036**2
+		lambd_a1 = -0.0801159
+		theta1 = 0.059518
+
+		p1 = CIR(theta1,kappa1,lambd_a1,sigma21)
+
+		kappa = 0.435049
+		sigma2 = 0.122388**2
+		lambd_a = -0.35292
+		theta = 0.0222862
+
+		p2 = CIR(theta,kappa,lambd_a,sigma2)
+		model_list = [p1,p2]
+		correl = 0.0244875
+		n_sim = 100000
+
+		gs = GapStack( xl_scendates, xl_gap_MN, xl_gap_ME,
+						xl_tt_MN, xl_tt_ME, buckets_num, buckets_label,TC,PE)
+		eng = EcapEngine(gs,model_list,correl)
+		
+		self.eng = eng
+		self.n_sim = n_sim
+		self.task = task
+
+	def compute(self):
+		results = self.eng.compute(self.n_sim,self.task)
+		return results
+
+
+
+
