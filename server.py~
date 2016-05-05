@@ -1,6 +1,6 @@
 import os
 from flask import (render_template, Flask, request, make_response, 
-					redirect, url_for, session, jsonify,Markup )
+					redirect, url_for, session, jsonify )
 import plotly
 from flask.ext.bootstrap import Bootstrap
 
@@ -10,16 +10,6 @@ from wtforms import FileField, SubmitField, ValidationError
 import json
 from celery import Celery
 import alm as alm
-html_code ='nada'
-
-
-nlen = None
-table_ce = None
-scen_list = None
-table_list = None
-plot_list_mn = None
-plot_list_me = None
-
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'top secret!'
@@ -27,7 +17,7 @@ bootstrap = Bootstrap(app)
 
 # Celery configuration
 direccion_redis = 'redis://localhost:6379/0'
-direccion_redis = 'redis://h:p5t6n5r06k8kk01ls0655a1qvdi@ec2-107-22-196-235.compute-1.amazonaws.com:13319'
+# direccion_redis = 'redis://h:p5t6n5r06k8kk01ls0655a1qvdi@ec2-107-22-196-235.compute-1.amazonaws.com:13319'
 
 app.config['CELERY_BROKER_URL'] = direccion_redis
 app.config['CELERY_RESULT_BACKEND'] = direccion_redis
@@ -50,13 +40,6 @@ class UploadForm(Form):
 
 @celery.task(bind=True)
 def long_task(self,*args):
-	global nlen
-	global table_ce
-	global scen_list
-	global table_list
-	global plot_list_mn
-	global plot_list_me
-
 	for elem in args:
 		fullfilename = elem
 	# filecookie = request.cookies.get('filename')
@@ -64,7 +47,7 @@ def long_task(self,*args):
 	# fullfilename = session.get('filename',None)
 	# fullfilename = 'F://OneDrive//cloud_projects//cir_economic_capital//static//uploads//InCE.xlsm'
 
-	# print(fullfilename) 
+	print(fullfilename) 
 	fc = alm.FileComputation(fullfilename, self)
 	results = fc.compute()
 	nlen = results.N()
@@ -74,7 +57,7 @@ def long_task(self,*args):
 	plot_list_mn = results.plot_list_mn()
 	plot_list_me = results.plot_list_me()
 	string = render_template('Out_Tasas.html', nlen = nlen, table_ce = table_ce, scen_list = scen_list, table_list = table_list, plot_list_mn = plot_list_mn, plot_list_me = plot_list_me)
-	# import ipdb;ipdb.set_trace()
+	
 	# with open("Output.html", "w") as text_file:
 		# print(" {}".format(string), file=text_file)
 	return  {'current': 100, 'total': 100, 'status': 'Task completed!',
@@ -103,31 +86,20 @@ def index():
 	else:
 		return render_template('index.html', form=form, this_file=file_name,fullfilename=fullfilename)
 
-@app.route('/reporte',methods=['POST','GET'])
+@app.route('/reporte',methods=['POST')
 def reporte():
-	global html_code
-	print('empezamos la funcion {}'.format(request.method))
 	 # string = session.get('reporte',None)
 	# import os as os
-	if request.method=='POST':
-		print('POST')
-		# import ipdb; ipdb.set_trace();
-		string = request.json['html_coding']
-		html_code = string
-		return string
-	else:
-		# import ipdb; ipdb.set_trace();
-		# string = render_template('Out_Tasas.html', nlen = nlen, table_ce = table_ce, scen_list = scen_list, table_list = table_list, plot_list_mn = plot_list_mn, plot_list_me = plot_list_me)
-
-		return render_template('foo.html', html_code=html_code)
 
 	# string = os.startfile('Output.html')
 	# with open('Output.html','r') as myfile:
 	# 	string = myfile.read().replace("\n",'')
-	
-	
+	import ipdb; ipdb.set_trace()
+	string = long_task.AsyncResult
 	#task = long_task.AsyncResult(task_id
-
+	#import pdb; pdb.set_trace()
+	# celery
+	return string
 
 @app.route('/longtask',methods=['POST'])
 def process():

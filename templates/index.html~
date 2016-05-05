@@ -270,12 +270,12 @@
         });
 
 function post_report() {
-	var data = $("#toNewWindow").text();
-	var dd = { html_coding : data}
+	data = $("#toNewWindow").html();
+	dd = { data: 'holi'}
 	$.ajax({
         type : "POST",
         url : "reporte",
-	    data: JSON.stringify(dd),
+	data: JSON.stringify(dd),
         contentType: 'application/json;charset=UTF-8',
         success: function(result) {
             console.log(result);

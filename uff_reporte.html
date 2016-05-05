@@ -1,0 +1,1010 @@
+ 
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+
+<!--<![endif]-->
+<!DOCTYPE html> <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]--> <!--[if !IE]><!--> <html lang="en"> <!--<![endif]--> <head> <meta charset="utf-8" />
+	<meta charset="utf-8">
+	<title>Retorno riesgo ALM</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta content="" name="description">
+	<meta content="" name="author">
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+	<link href="static/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet">
+	<link href="static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="static/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="static/css/animate.min.css" rel="stylesheet">
+	<link href="static/css/style.min.css" rel="stylesheet">
+	<link href="static/css/style-responsive.min.css" rel="stylesheet">
+	<link href="static/css/theme/default.css" rel="stylesheet" id="theme">
+	<!-- ================== END BASE CSS STYLE ================== -->
+	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+	<link href="static/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet">
+	<link href="static/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet">
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="static/plugins/pace/pace.min.js"></script>
+	<script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE CSS ================== -->
+    <link href="static/plugins/nvd3/build/nv.d3.css" rel="stylesheet">
+	<!-- ================== END PAGE CSS ================== -->
+
+
+	<!-- begin #page-loader -->
+	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
+	<!-- end #page-loader -->
+	
+	<!-- begin #page-container -->
+	<div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+		<!-- begin #header -->
+		<div id="header" class="header navbar navbar-default navbar-fixed-top">
+			<!-- begin container-fluid -->
+			<div class="container-fluid">
+				<!-- begin mobile sidebar expand / collapse button -->
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"><span class="navbar-logo"></span>  Admin</a>
+					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<!-- end mobile sidebar expand / collapse button -->
+				
+			
+			</div>
+			<!-- end container-fluid -->
+		</div>
+		<!-- end #header -->
+		
+		
+		<!-- begin #content -->
+		<div id="content" class="content">
+			<!-- begin breadcrumb -->
+			<ol class="breadcrumb pull-right">
+				<li><a href="javascript:;">Retorno</a></li>
+				<li><a href="javascript:;">VEN</a></li>
+				<li class="active">Detalle tasas</li>
+			</ol>
+			<!-- end breadcrumb -->
+			<!-- begin page-header -->
+			<h1 class="page-header">Riesgo Retorno ALM <small>riesgo retorno ALM...</small></h1>
+			<!-- end page-header -->
+			<!-- begin row -->
+			<div class="row">
+			    <!-- begin col-12 -->
+			    <div class="col-md-12">
+			        <!-- begin panel -->
+                    <div class="panel panel-inverse">
+                        <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Capital economico por riesgo de tasas</h4>
+                        </div>
+                        <div class="panel-body">
+                        	<table class="table table-striped table-bordered">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VP MN - base</th>
+      <th>VP ME - base</th>
+      <th>VP Total - base</th>
+      <th>VP MN - shock</th>
+      <th>VP ME - shock (MM USD)</th>
+      <th>VP Total - shock</th>
+      <th>ECAP MN</th>
+      <th>ECAP ME (MM USD)</th>
+      <th>ECAP Global</th>
+      <th>ECAP MN (%PE)</th>
+      <th>ECAP ME (%PE)</th>
+      <th>ECAP Global (%PE)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Jun 2014</th>
+      <td>9812.9</td>
+      <td>333.6</td>
+      <td>10745.7</td>
+      <td>8611.4</td>
+      <td>228.3</td>
+      <td>9249.7</td>
+      <td>-1201.5</td>
+      <td>-105.4</td>
+      <td>-1496.1</td>
+      <td>8.02</td>
+      <td>1.97</td>
+      <td>9.99</td>
+    </tr>
+    <tr>
+      <th>Jul 2014</th>
+      <td>7517.2</td>
+      <td>568.2</td>
+      <td>9105.9</td>
+      <td>6545.0</td>
+      <td>465.8</td>
+      <td>7847.5</td>
+      <td>-972.2</td>
+      <td>-102.4</td>
+      <td>-1258.4</td>
+      <td>6.56</td>
+      <td>1.93</td>
+      <td>8.49</td>
+    </tr>
+    <tr>
+      <th>Sep 2014</th>
+      <td>10842.7</td>
+      <td>-384.0</td>
+      <td>9744.9</td>
+      <td>9725.7</td>
+      <td>-476.5</td>
+      <td>8363.2</td>
+      <td>-1117.1</td>
+      <td>-92.5</td>
+      <td>-1381.7</td>
+      <td>7.13</td>
+      <td>1.69</td>
+      <td>8.81</td>
+    </tr>
+    <tr>
+      <th>Dec 2014</th>
+      <td>10992.8</td>
+      <td>-427.2</td>
+      <td>9796.7</td>
+      <td>9776.6</td>
+      <td>-495.1</td>
+      <td>8390.4</td>
+      <td>-1216.2</td>
+      <td>-67.9</td>
+      <td>-1406.3</td>
+      <td>7.59</td>
+      <td>1.19</td>
+      <td>8.78</td>
+    </tr>
+  </tbody>
+</table>
+                 <!--            <table id="data-table" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Rendering engine</th>
+                                        <th>Browser</th>
+                                        <th>Platform(s)</th>
+                                        <th>Engine version</th>
+                                        <th>CSS grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 4.0</td>
+                                        <td>Win 95+</td>
+                                        <td>4</td>
+                                        <td>X</td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table> -->
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-12 -->
+            </div>
+            <!-- end row -->
+
+			
+			<!-- begin iter  -->
+			<!-- begin row -->
+			<div class="row">
+			    <!-- begin col-12 -->
+			    <div class="col-md-12">
+			        <!-- begin panel -->
+                    <div class="panel panel-inverse">
+                        <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Jun 2014 </h4>
+                        </div>
+                        <div class="panel-body">
+                        	<table class="table table-striped table-bordered">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1M</th>
+      <th>2M</th>
+      <th>3M</th>
+      <th>4-6M</th>
+      <th>7M-1A</th>
+      <th>2A</th>
+      <th>3A</th>
+      <th>4A</th>
+      <th>5A</th>
+      <th>6A</th>
+      <th>7A</th>
+      <th>8A</th>
+      <th>9A</th>
+      <th>10A</th>
+      <th>11-20A</th>
+      <th>&gt; 20A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tasas base MN</th>
+      <td>4.623</td>
+      <td>4.646</td>
+      <td>4.759</td>
+      <td>4.839</td>
+      <td>4.893</td>
+      <td>4.953</td>
+      <td>5.103</td>
+      <td>5.254</td>
+      <td>5.405</td>
+      <td>5.556</td>
+      <td>5.707</td>
+      <td>5.858</td>
+      <td>6.009</td>
+      <td>6.159</td>
+      <td>6.505</td>
+      <td>7.911</td>
+    </tr>
+    <tr>
+      <th>Tasas base ME</th>
+      <td>0.351</td>
+      <td>0.411</td>
+      <td>0.471</td>
+      <td>0.571</td>
+      <td>0.796</td>
+      <td>1.371</td>
+      <td>2.605</td>
+      <td>2.676</td>
+      <td>2.846</td>
+      <td>3.023</td>
+      <td>3.298</td>
+      <td>3.547</td>
+      <td>3.770</td>
+      <td>3.954</td>
+      <td>4.499</td>
+      <td>5.341</td>
+    </tr>
+    <tr>
+      <th>Tasas shock MN</th>
+      <td>9.705</td>
+      <td>9.730</td>
+      <td>9.755</td>
+      <td>9.806</td>
+      <td>9.918</td>
+      <td>10.138</td>
+      <td>10.418</td>
+      <td>10.684</td>
+      <td>10.933</td>
+      <td>11.165</td>
+      <td>11.379</td>
+      <td>11.574</td>
+      <td>11.749</td>
+      <td>11.906</td>
+      <td>12.440</td>
+      <td>12.394</td>
+    </tr>
+    <tr>
+      <th>Tasas shock ME</th>
+      <td>0.097</td>
+      <td>0.137</td>
+      <td>0.177</td>
+      <td>0.256</td>
+      <td>0.431</td>
+      <td>0.771</td>
+      <td>1.201</td>
+      <td>1.603</td>
+      <td>1.977</td>
+      <td>2.324</td>
+      <td>2.645</td>
+      <td>2.940</td>
+      <td>3.212</td>
+      <td>3.461</td>
+      <td>4.507</td>
+      <td>5.530</td>
+    </tr>
+  </tbody>
+</table>
+                 <!--            <table id="data-table" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Rendering engine</th>
+                                        <th>Browser</th>
+                                        <th>Platform(s)</th>
+                                        <th>Engine version</th>
+                                        <th>CSS grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 4.0</td>
+                                        <td>Win 95+</td>
+                                        <td>4</td>
+                                        <td>X</td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table> -->
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-12 -->
+            </div>
+            <!-- end row -->
+						
+			<!-- begin row -->
+			<div class="row">
+			    <!-- begin col-6 -->
+			    <div class="col-md-6">
+			        <div class="panel panel-inverse">
+			            <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Tasas y gap en MN - Jun 2014 </h4>
+			            </div>
+			            <div class="panel-body">
+			              <div id="5bbb8ba3-9e1e-49ad-a068-8c49a8d72a36" style="height: 100%; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("5bbb8ba3-9e1e-49ad-a068-8c49a8d72a36", [{"type": "bar", "yaxis": "y1", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [-481265.3160545655, 22457.191799676435, 59051.82216310568, 144538.74151976287, 419830.7259211912, 516355.8299849201, 249464.85236584494, -80856.1957603064, -23977.756542999858, 110689.74357994873, 276558.86122848856, 58257.49410463575, 21731.457953565252, -275594.76981385855, 112193.01450302987, 40989.341600063395], "name": "Gaps MN", "marker": {"color": "red"}}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "base MN", "marker": {"size": 8}, "y": [4.62303409090909, 4.645761363636363, 4.759397727272727, 4.838943181818181, 4.892920454545455, 4.952579545454546, 5.1034339909090916, 5.254288436363638, 5.405142881818184, 5.555997327272731, 5.706851772727277, 5.857706218181824, 6.008560663636371, 6.159415109090917, 6.50526791090909, 7.910543999999997]}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "shock MN", "marker": {"size": 8}, "y": [9.704652685164561, 9.7300901108059, 9.755448888583885, 9.8059265623734, 9.918296281544304, 10.137731277311302, 10.418335662345335, 10.683923354697145, 10.93321306079742, 11.165132231411645, 11.378839613597158, 11.57374011753156, 11.749491400388434, 11.90600208358996, 12.440008767335575, 12.393741208062892]}], {"yaxis2": {"side": "right", "overlaying": "y", "title": "Tasas"}, "yaxis": {"title": "Gaps"}, "title": "TT en soles"}, {"showLink": false, "linkText": "Export to plot.ly"})</script> 
+							
+			            </div>
+			        </div>
+			    </div>
+			    <!-- end col-6 -->
+			    <!-- begin col-6 -->
+			    <div class="col-md-6">
+			        <div class="panel panel-inverse">
+			            <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Tasas y gap en ME- Jun 2014 </h4>
+			            </div>
+			            <div class="panel-body">
+			             
+							<div id="eab8d67d-871b-4ad7-88dd-3fadf1eac6e7" style="height: 100%; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("eab8d67d-871b-4ad7-88dd-3fadf1eac6e7", [{"type": "bar", "yaxis": "y1", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [270586.9028231955, 93057.22536940638, -9738.732622971678, -26778.52620973209, -28540.993312979474, -8045.235461486158, -11940.904327146865, -149171.2604010487, -118773.10992832003, -6397.415954684697, 8287.540573107834, -45437.61524185974, 15412.426148423345, 4654.8313883229885, 25820.66000539399, 1038.8306430108762], "name": "Gaps ME", "marker": {"color": "red"}}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "base ME", "marker": {"size": 8}, "y": [0.35058774288260336, 0.41058774288260336, 0.47058774288260335, 0.5705877428826034, 0.7955877428826034, 1.3705877428826032, 2.6048655531865084, 2.675531189392233, 2.8457471070459706, 3.0232785438369936, 3.298137767626752, 3.546914722340544, 3.7695694362254617, 3.95422500425342, 4.4986929170313505, 5.340781959640917]}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "shock ME", "marker": {"size": 8}, "y": [0.09699704271945997, 0.1369925103846592, 0.17681622500402838, 0.2559434545437389, 0.43140166296453675, 0.7712985553537166, 1.2008576503058421, 1.6027730551021246, 1.9769691415920665, 2.3239153697903303, 2.6445077351427315, 2.939954981137305, 3.211676614048309, 3.461216422048974, 4.507402513980474, 5.5295714566462095]}], {"yaxis2": {"side": "right", "overlaying": "y", "title": "Tasas"}, "yaxis": {"title": "Gaps"}, "title": "TT en dolares"}, {"showLink": false, "linkText": "Export to plot.ly"})</script> 
+			            </div>
+			        </div>
+			    </div>
+			    <!-- end col-6 -->
+			</div>
+			<!-- end row -->
+			
+			<!-- begin iter  -->
+			<!-- begin row -->
+			<div class="row">
+			    <!-- begin col-12 -->
+			    <div class="col-md-12">
+			        <!-- begin panel -->
+                    <div class="panel panel-inverse">
+                        <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Jul 2014 </h4>
+                        </div>
+                        <div class="panel-body">
+                        	<table class="table table-striped table-bordered">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1M</th>
+      <th>2M</th>
+      <th>3M</th>
+      <th>4-6M</th>
+      <th>7M-1A</th>
+      <th>2A</th>
+      <th>3A</th>
+      <th>4A</th>
+      <th>5A</th>
+      <th>6A</th>
+      <th>7A</th>
+      <th>8A</th>
+      <th>9A</th>
+      <th>10A</th>
+      <th>11-20A</th>
+      <th>&gt; 20A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tasas base MN</th>
+      <td>4.354</td>
+      <td>4.399</td>
+      <td>4.512</td>
+      <td>4.591</td>
+      <td>4.645</td>
+      <td>4.704</td>
+      <td>4.850</td>
+      <td>4.996</td>
+      <td>5.141</td>
+      <td>5.287</td>
+      <td>5.433</td>
+      <td>5.579</td>
+      <td>5.725</td>
+      <td>5.871</td>
+      <td>6.246</td>
+      <td>7.682</td>
+    </tr>
+    <tr>
+      <th>Tasas base ME</th>
+      <td>0.570</td>
+      <td>0.650</td>
+      <td>0.650</td>
+      <td>0.650</td>
+      <td>0.820</td>
+      <td>1.370</td>
+      <td>2.722</td>
+      <td>2.857</td>
+      <td>3.048</td>
+      <td>3.269</td>
+      <td>3.473</td>
+      <td>3.783</td>
+      <td>4.033</td>
+      <td>4.250</td>
+      <td>4.757</td>
+      <td>5.486</td>
+    </tr>
+    <tr>
+      <th>Tasas shock MN</th>
+      <td>9.390</td>
+      <td>9.415</td>
+      <td>9.440</td>
+      <td>9.490</td>
+      <td>9.601</td>
+      <td>9.817</td>
+      <td>10.094</td>
+      <td>10.356</td>
+      <td>10.603</td>
+      <td>10.833</td>
+      <td>11.046</td>
+      <td>11.240</td>
+      <td>11.416</td>
+      <td>11.573</td>
+      <td>12.120</td>
+      <td>12.124</td>
+    </tr>
+    <tr>
+      <th>Tasas shock ME</th>
+      <td>0.258</td>
+      <td>0.298</td>
+      <td>0.337</td>
+      <td>0.415</td>
+      <td>0.588</td>
+      <td>0.924</td>
+      <td>1.346</td>
+      <td>1.742</td>
+      <td>2.109</td>
+      <td>2.449</td>
+      <td>2.763</td>
+      <td>3.053</td>
+      <td>3.318</td>
+      <td>3.562</td>
+      <td>4.583</td>
+      <td>5.579</td>
+    </tr>
+  </tbody>
+</table>
+                 <!--            <table id="data-table" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Rendering engine</th>
+                                        <th>Browser</th>
+                                        <th>Platform(s)</th>
+                                        <th>Engine version</th>
+                                        <th>CSS grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 4.0</td>
+                                        <td>Win 95+</td>
+                                        <td>4</td>
+                                        <td>X</td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table> -->
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-12 -->
+            </div>
+            <!-- end row -->
+						
+			<!-- begin row -->
+			<div class="row">
+			    <!-- begin col-6 -->
+			    <div class="col-md-6">
+			        <div class="panel panel-inverse">
+			            <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Tasas y gap en MN - Jul 2014 </h4>
+			            </div>
+			            <div class="panel-body">
+			              <div id="b2300273-4770-4f36-8b1d-e21b01e7d960" style="height: 100%; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("b2300273-4770-4f36-8b1d-e21b01e7d960", [{"type": "bar", "yaxis": "y1", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [-642703.170133082, 3959.9016179759246, 40357.701747429, 201728.7110806144, 440222.9678365615, 497503.9759895874, 228184.41463895107, -113475.79299631837, -29675.509338802443, 111721.44179896597, 239575.6208404267, 58850.71198212215, 22275.39034717039, -309489.7255749168, 110136.41235591729, 40522.92956027478], "name": "Gaps MN", "marker": {"color": "red"}}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "base MN", "marker": {"size": 8}, "y": [4.35378531073446, 4.398983050847457, 4.511977401129943, 4.591073446327684, 4.644745762711864, 4.704067796610169, 4.849872241949155, 4.9956766872881415, 5.141481132627127, 5.287285577966113, 5.433090023305099, 5.5788944686440844, 5.724698913983071, 5.870503359322057, 6.246352510932213, 7.682129000000004]}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "shock MN", "marker": {"size": 8}, "y": [9.39044163865994, 9.415486826066012, 9.440456685351272, 9.490166589829974, 9.600858882344475, 9.817155002804846, 10.09404773940834, 10.356498304884077, 10.603255173864179, 10.833267702137173, 11.045708081518836, 11.239985896393211, 11.415754698810687, 11.57291051402154, 12.12044458497843, 12.124110460463221]}], {"yaxis2": {"side": "right", "overlaying": "y", "title": "Tasas"}, "yaxis": {"title": "Gaps"}, "title": "TT en soles"}, {"showLink": false, "linkText": "Export to plot.ly"})</script> 
+							
+			            </div>
+			        </div>
+			    </div>
+			    <!-- end col-6 -->
+			    <!-- begin col-6 -->
+			    <div class="col-md-6">
+			        <div class="panel panel-inverse">
+			            <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Tasas y gap en ME- Jul 2014 </h4>
+			            </div>
+			            <div class="panel-body">
+			             
+							<div id="5643a44c-0c3f-4f38-ab74-74023d4eaadc" style="height: 100%; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("5643a44c-0c3f-4f38-ab74-74023d4eaadc", [{"type": "bar", "yaxis": "y1", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [331477.42213203094, 5400.804357214065, -48139.96961346545, 36648.544286922144, -31869.3983113328, 13881.899570484053, -10763.062753099653, -160196.8807945552, -114505.68794519224, -7011.137661754921, 9554.914473912404, -21198.033383540478, 13728.122425280535, -5632.599211231243, 25816.28717031274, 996.0957050769222], "name": "Gaps ME", "marker": {"color": "red"}}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "base ME", "marker": {"size": 8}, "y": [0.5702662667796815, 0.6502662667796816, 0.6502662667796816, 0.6502662667796816, 0.8202662667796814, 1.3702662667796814, 2.7219431721825504, 2.8565674874422298, 3.04827043584297, 3.2686879772271693, 3.472855429816102, 3.7834486033278436, 4.033045508105304, 4.24974059022778, 4.757249596081414, 5.485916891468934]}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "shock ME", "marker": {"size": 8}, "y": [0.25828138866563766, 0.2977847388334176, 0.3371126884646358, 0.415237841876559, 0.5883935780611527, 0.9235175936387563, 1.3464653038995245, 1.7416242516571812, 2.1090503578713227, 2.4493218000440686, 2.763419937574052, 3.0526168287736466, 3.3183756940424747, 3.562267444446876, 4.583184537561191, 5.578749806381]}], {"yaxis2": {"side": "right", "overlaying": "y", "title": "Tasas"}, "yaxis": {"title": "Gaps"}, "title": "TT en dolares"}, {"showLink": false, "linkText": "Export to plot.ly"})</script> 
+			            </div>
+			        </div>
+			    </div>
+			    <!-- end col-6 -->
+			</div>
+			<!-- end row -->
+			
+			<!-- begin iter  -->
+			<!-- begin row -->
+			<div class="row">
+			    <!-- begin col-12 -->
+			    <div class="col-md-12">
+			        <!-- begin panel -->
+                    <div class="panel panel-inverse">
+                        <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Sep 2014 </h4>
+                        </div>
+                        <div class="panel-body">
+                        	<table class="table table-striped table-bordered">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1M</th>
+      <th>2M</th>
+      <th>3M</th>
+      <th>4-6M</th>
+      <th>7M-1A</th>
+      <th>2A</th>
+      <th>3A</th>
+      <th>4A</th>
+      <th>5A</th>
+      <th>6A</th>
+      <th>7A</th>
+      <th>8A</th>
+      <th>9A</th>
+      <th>10A</th>
+      <th>11-20A</th>
+      <th>&gt; 20A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tasas base MN</th>
+      <td>4.350</td>
+      <td>4.550</td>
+      <td>4.678</td>
+      <td>4.681</td>
+      <td>4.714</td>
+      <td>4.806</td>
+      <td>5.004</td>
+      <td>5.202</td>
+      <td>5.401</td>
+      <td>5.599</td>
+      <td>5.798</td>
+      <td>5.996</td>
+      <td>6.266</td>
+      <td>6.536</td>
+      <td>7.193</td>
+      <td>8.084</td>
+    </tr>
+    <tr>
+      <th>Tasas base ME</th>
+      <td>0.501</td>
+      <td>0.611</td>
+      <td>0.715</td>
+      <td>0.887</td>
+      <td>1.164</td>
+      <td>2.013</td>
+      <td>2.940</td>
+      <td>3.026</td>
+      <td>3.178</td>
+      <td>3.357</td>
+      <td>3.344</td>
+      <td>3.586</td>
+      <td>3.945</td>
+      <td>4.295</td>
+      <td>4.999</td>
+      <td>5.820</td>
+    </tr>
+    <tr>
+      <th>Tasas shock MN</th>
+      <td>9.452</td>
+      <td>9.477</td>
+      <td>9.502</td>
+      <td>9.552</td>
+      <td>9.663</td>
+      <td>9.880</td>
+      <td>10.158</td>
+      <td>10.421</td>
+      <td>10.668</td>
+      <td>10.898</td>
+      <td>11.111</td>
+      <td>11.305</td>
+      <td>11.481</td>
+      <td>11.638</td>
+      <td>12.183</td>
+      <td>12.177</td>
+    </tr>
+    <tr>
+      <th>Tasas shock ME</th>
+      <td>0.145</td>
+      <td>0.185</td>
+      <td>0.225</td>
+      <td>0.303</td>
+      <td>0.478</td>
+      <td>0.817</td>
+      <td>1.244</td>
+      <td>1.644</td>
+      <td>2.016</td>
+      <td>2.361</td>
+      <td>2.680</td>
+      <td>2.974</td>
+      <td>3.244</td>
+      <td>3.491</td>
+      <td>4.530</td>
+      <td>5.544</td>
+    </tr>
+  </tbody>
+</table>
+                 <!--            <table id="data-table" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Rendering engine</th>
+                                        <th>Browser</th>
+                                        <th>Platform(s)</th>
+                                        <th>Engine version</th>
+                                        <th>CSS grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 4.0</td>
+                                        <td>Win 95+</td>
+                                        <td>4</td>
+                                        <td>X</td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table> -->
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-12 -->
+            </div>
+            <!-- end row -->
+						
+			<!-- begin row -->
+			<div class="row">
+			    <!-- begin col-6 -->
+			    <div class="col-md-6">
+			        <div class="panel panel-inverse">
+			            <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Tasas y gap en MN - Sep 2014 </h4>
+			            </div>
+			            <div class="panel-body">
+			              <div id="24f93ff2-1f7e-45e6-a6ea-6252fdf96677" style="height: 100%; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("24f93ff2-1f7e-45e6-a6ea-6252fdf96677", [{"type": "bar", "yaxis": "y1", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [-581306.2160920636, 85371.68024070359, -104696.09918615347, 214518.08740716364, 698268.5207750074, 532519.6099044787, 313508.46253688855, -224826.59808820998, -4153.667130159406, 250846.6357286985, 113535.49510061345, 85230.55719565011, 32813.63625779536, -311457.2849024186, 117084.23459565875, 40474.9834567989], "name": "Gaps MN", "marker": {"color": "red"}}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "base MN", "marker": {"size": 8}, "y": [4.349853246447527, 4.54954079994864, 4.677643864492382, 4.681453143725389, 4.714396071795437, 4.805584897094431, 5.003994986064426, 5.202405075034421, 5.400815164004416, 5.599225252974412, 5.7976353419444075, 5.996045430914402, 6.265862402939951, 6.535679374965501, 7.193216693612051, 8.083960648653331]}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "shock MN", "marker": {"size": 8}, "y": [9.452000258525972, 9.477122218886326, 9.502168201294614, 9.552028381320055, 9.663048996116519, 9.879959486885781, 10.157578705181303, 10.420643311465483, 10.667895960117146, 10.898281724331227, 11.110970167613088, 11.305369960905075, 11.481135459363333, 11.638165151534686, 12.183052521046523, 12.17694504496123]}], {"yaxis2": {"side": "right", "overlaying": "y", "title": "Tasas"}, "yaxis": {"title": "Gaps"}, "title": "TT en soles"}, {"showLink": false, "linkText": "Export to plot.ly"})</script> 
+							
+			            </div>
+			        </div>
+			    </div>
+			    <!-- end col-6 -->
+			    <!-- begin col-6 -->
+			    <div class="col-md-6">
+			        <div class="panel panel-inverse">
+			            <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Tasas y gap en ME- Sep 2014 </h4>
+			            </div>
+			            <div class="panel-body">
+			             
+							<div id="52e8b246-2ad1-4d3a-aef4-369ede2f7e4b" style="height: 100%; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("52e8b246-2ad1-4d3a-aef4-369ede2f7e4b", [{"type": "bar", "yaxis": "y1", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [103886.3665599561, 85713.76420096621, 26382.25030246162, -89635.68094684015, 31890.489156081083, -14990.025451994446, 25787.629300931847, -155578.0521548007, -94620.76279959333, -3.8632267328608805, 12415.071657429726, -9623.81020664405, 3287.137213219014, -1938.6323232748666, 25914.048868833772, 914.5671953872348], "name": "Gaps ME", "marker": {"color": "red"}}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "base ME", "marker": {"size": 8}, "y": [0.5010646397014411, 0.6111757508125523, 0.7146201952569968, 0.8872868619236637, 1.1637868619236635, 2.01295352859033, 2.939943123037854, 3.0258554862590956, 3.1784965203562, 3.357276481982068, 3.343933728496723, 3.586351620851172, 3.94450905782615, 4.294715907453697, 4.999123485857992, 5.820199066313777]}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "shock ME", "marker": {"size": 8}, "y": [0.14514303470676282, 0.18499169075147925, 0.2246675048293012, 0.3034957847211528, 0.47826708431026876, 0.8167400092955468, 1.2443265213496257, 1.6442259405158088, 2.0164018912070203, 2.361356280135163, 2.6800105858010737, 2.9735924583403683, 3.2435344631635887, 3.4913884967756825, 4.530031700715043, 5.5442578833499345]}], {"yaxis2": {"side": "right", "overlaying": "y", "title": "Tasas"}, "yaxis": {"title": "Gaps"}, "title": "TT en dolares"}, {"showLink": false, "linkText": "Export to plot.ly"})</script> 
+			            </div>
+			        </div>
+			    </div>
+			    <!-- end col-6 -->
+			</div>
+			<!-- end row -->
+			
+			<!-- begin iter  -->
+			<!-- begin row -->
+			<div class="row">
+			    <!-- begin col-12 -->
+			    <div class="col-md-12">
+			        <!-- begin panel -->
+                    <div class="panel panel-inverse">
+                        <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Dec 2014 </h4>
+                        </div>
+                        <div class="panel-body">
+                        	<table class="table table-striped table-bordered">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1M</th>
+      <th>2M</th>
+      <th>3M</th>
+      <th>4-6M</th>
+      <th>7M-1A</th>
+      <th>2A</th>
+      <th>3A</th>
+      <th>4A</th>
+      <th>5A</th>
+      <th>6A</th>
+      <th>7A</th>
+      <th>8A</th>
+      <th>9A</th>
+      <th>10A</th>
+      <th>11-20A</th>
+      <th>&gt; 20A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tasas base MN</th>
+      <td>4.176</td>
+      <td>4.459</td>
+      <td>4.640</td>
+      <td>4.634</td>
+      <td>4.669</td>
+      <td>4.792</td>
+      <td>4.974</td>
+      <td>5.157</td>
+      <td>5.340</td>
+      <td>5.522</td>
+      <td>5.705</td>
+      <td>5.888</td>
+      <td>6.070</td>
+      <td>6.253</td>
+      <td>7.017</td>
+      <td>7.973</td>
+    </tr>
+    <tr>
+      <th>Tasas base ME</th>
+      <td>0.566</td>
+      <td>0.701</td>
+      <td>0.837</td>
+      <td>1.066</td>
+      <td>1.385</td>
+      <td>2.334</td>
+      <td>3.054</td>
+      <td>3.153</td>
+      <td>3.292</td>
+      <td>3.448</td>
+      <td>3.317</td>
+      <td>3.569</td>
+      <td>3.826</td>
+      <td>4.071</td>
+      <td>4.847</td>
+      <td>5.785</td>
+    </tr>
+    <tr>
+      <th>Tasas shock MN</th>
+      <td>9.584</td>
+      <td>9.609</td>
+      <td>9.635</td>
+      <td>9.685</td>
+      <td>9.796</td>
+      <td>10.015</td>
+      <td>10.294</td>
+      <td>10.558</td>
+      <td>10.807</td>
+      <td>11.038</td>
+      <td>11.251</td>
+      <td>11.446</td>
+      <td>11.621</td>
+      <td>11.778</td>
+      <td>12.317</td>
+      <td>12.290</td>
+    </tr>
+    <tr>
+      <th>Tasas shock ME</th>
+      <td>0.633</td>
+      <td>0.671</td>
+      <td>0.709</td>
+      <td>0.785</td>
+      <td>0.953</td>
+      <td>1.277</td>
+      <td>1.685</td>
+      <td>2.064</td>
+      <td>2.416</td>
+      <td>2.740</td>
+      <td>3.039</td>
+      <td>3.314</td>
+      <td>3.566</td>
+      <td>3.797</td>
+      <td>4.759</td>
+      <td>5.693</td>
+    </tr>
+  </tbody>
+</table>
+                 <!--            <table id="data-table" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Rendering engine</th>
+                                        <th>Browser</th>
+                                        <th>Platform(s)</th>
+                                        <th>Engine version</th>
+                                        <th>CSS grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <td>Trident</td>
+                                        <td>Internet Explorer 4.0</td>
+                                        <td>Win 95+</td>
+                                        <td>4</td>
+                                        <td>X</td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table> -->
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-12 -->
+            </div>
+            <!-- end row -->
+						
+			<!-- begin row -->
+			<div class="row">
+			    <!-- begin col-6 -->
+			    <div class="col-md-6">
+			        <div class="panel panel-inverse">
+			            <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Tasas y gap en MN - Dec 2014 </h4>
+			            </div>
+			            <div class="panel-body">
+			              <div id="b69cca21-4ea9-4b22-b00a-d2dec8064919" style="height: 100%; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("b69cca21-4ea9-4b22-b00a-d2dec8064919", [{"type": "bar", "yaxis": "y1", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [-593776.65799326, 20111.6777974368, -54702.93243888468, 279502.7375896142, 608554.6933209911, 565030.2846010254, 299608.3609261824, -178309.32003910336, -6523.883275893271, 256752.41050385367, 100368.6468920072, 86150.09172414083, 74155.09588390424, -323973.06111472665, 111206.24668864415, 39413.46348292571], "name": "Gaps MN", "marker": {"color": "red"}}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "base MN", "marker": {"size": 8}, "y": [4.176242937853107, 4.458728813559323, 4.6395197740112994, 4.633870056497176, 4.6690799031477, 4.791658595641646, 4.974303091596639, 5.156947587551631, 5.3395920835066235, 5.522236579461615, 5.7048810754166075, 5.8875255713716, 6.070170067326592, 6.252814563281584, 7.0170395791680775, 7.973116472980002]}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "shock MN", "marker": {"size": 8}, "y": [9.58406550240456, 9.609352287195216, 9.63456169899981, 9.684744507153841, 9.796470001393121, 10.01469949342868, 10.293878402030753, 10.558261281221482, 10.806578279484146, 11.03776526764111, 11.250986161130294, 11.445647667445247, 11.62140586658078, 11.778164539104253, 12.317368006768303, 12.29027781661669]}], {"yaxis2": {"side": "right", "overlaying": "y", "title": "Tasas"}, "yaxis": {"title": "Gaps"}, "title": "TT en soles"}, {"showLink": false, "linkText": "Export to plot.ly"})</script> 
+							
+			            </div>
+			        </div>
+			    </div>
+			    <!-- end col-6 -->
+			    <!-- begin col-6 -->
+			    <div class="col-md-6">
+			        <div class="panel panel-inverse">
+			            <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Tasas y gap en ME- Dec 2014 </h4>
+			            </div>
+			            <div class="panel-body">
+			             
+							<div id="3497c4dc-f716-4cb7-8d97-451668c011ae" style="height: 100%; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("3497c4dc-f716-4cb7-8d97-451668c011ae", [{"type": "bar", "yaxis": "y1", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "y": [90664.50016929659, 62088.71104862838, -48633.58004338553, -17787.95429830019, 44252.72948252694, -19085.72929647094, 33255.532492754995, -154558.0810319888, -107704.39127335776, 28923.904571034116, 11824.566652612497, 3671.2141312958665, 4358.018333056149, -8686.73565301344, 25621.09784627079, 797.4822213642615], "name": "Gaps ME", "marker": {"color": "red"}}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "base ME", "marker": {"size": 8}, "y": [0.5662320833333333, 0.7013987500000003, 0.8365654166666667, 1.0655654166666677, 1.385315416666667, 2.3340654166666677, 3.0542662509285727, 3.15310664872428, 3.291588599774453, 3.448344332752895, 3.3169159930645176, 3.569128622135831, 3.8258067403136753, 4.070558977470373, 4.846612307792193, 5.784826456807979]}, {"type": "scatter", "yaxis": "y2", "x": ["1M", "2M", "3M", "4-6M", "7M-1A", "2A", "3A", "4A", "5A", "6A", "7A", "8A", "9A", "10A", "11-20A", "> 20A"], "mode": "lines+markers", "name": "shock ME", "marker": {"size": 8}, "y": [0.6329266786257337, 0.6712834572482285, 0.7094563658202047, 0.7852469532395157, 0.9530389821022389, 1.2770462046980402, 1.6845987942311513, 2.064029182544602, 2.415699487997691, 2.740440691522683, 3.039432422560462, 3.3140935853654963, 3.5659885832533655, 3.7967508992239773, 4.758959343789848, 5.69276896881119]}], {"yaxis2": {"side": "right", "overlaying": "y", "title": "Tasas"}, "yaxis": {"title": "Gaps"}, "title": "TT en dolares"}, {"showLink": false, "linkText": "Export to plot.ly"})</script> 
+			            </div>
+			        </div>
+			    </div>
+			    <!-- end col-6 -->
+			</div>
+			<!-- end row -->
+			
+			<!-- end iter  -->
+			
+		</div>
+		<!-- end #content -->
+		
+        
+		
+		<!-- begin scroll to top btn -->
+		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+		<!-- end scroll to top btn -->
+	</div>
+	<!-- end page container -->
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="static/plugins/jquery/jquery-1.9.1.min.js"></script>
+	<script src="static/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+	<script src="static/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+	<script src="static/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="static/crossbrowserjs/html5shiv.js"></script>
+		<script src="static/crossbrowserjs/respond.min.js"></script>
+		<script src="static/crossbrowserjs/excanvas.min.js"></script>
+	<![endif]-->
+	<script src="static/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="static/plugins/jquery-cookie/jquery.cookie.js"></script>
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="static/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+	<script src="static/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+	<script src="static/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+	<script src="static/js/table-manage-default.demo.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"></script>
+    <script src="static/plugins/nvd3/build/nv.d3.js"></script>
+	<script src="static/js/chart-d3.demo.min.js"></script>
+	<script src="static/js/apps.min.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+	<script>
+		$(document).ready(function() {
+			App.init();
+			ChartNvd3.init();
+			TableManageDefault.init();
+		});
+	</script> </body> </html>
+

@@ -320,7 +320,7 @@ class EcapEngine:
 				shock_tt_me,shock_tt_mn_sa,shock_tt_me_sa ,self.gap_stack[ii] )
 			sd_s.append(sd)
 			task.update_state(state='PROGRESS',meta={'current': ii, 'total': total,
-                                'status': 'in progress'})
+                                'status': 'in progress','result':'uff'+str(ii)})
 			print(ii)
 		t1 = time.time()-t0
 		
