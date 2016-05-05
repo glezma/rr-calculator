@@ -10,6 +10,8 @@ from wtforms import FileField, SubmitField, ValidationError
 import json
 from celery import Celery
 import alm as alm
+# import openpyxl as opxl
+# import xl_tools as xl
 html_code ='nada'
 
 
@@ -26,7 +28,7 @@ app.config['SECRET_KEY'] = 'top secret!'
 bootstrap = Bootstrap(app)
 
 # Celery configuration
-direccion_redis = 'redis://localhost:6379/0'
+# direccion_redis = 'redis://localhost:6379/0'
 direccion_redis = 'redis://h:p5t6n5r06k8kk01ls0655a1qvdi@ec2-107-22-196-235.compute-1.amazonaws.com:13319'
 
 app.config['CELERY_BROKER_URL'] = direccion_redis
@@ -58,15 +60,15 @@ def long_task(self,*args):
 	global plot_list_me
 
 	for elem in args:
-		fullfilename = elem
+		fc = elem
 	# filecookie = request.cookies.get('filename')
 	# fullfilename = json.loads(filecookie)['file']
 	# fullfilename = session.get('filename',None)
 	# fullfilename = 'F://OneDrive//cloud_projects//cir_economic_capital//static//uploads//InCE.xlsm'
 
 	# print(fullfilename) 
-	fc = alm.FileComputation(fullfilename, self)
-	results = fc.compute()
+	# import ipdb; ipdb.set_trace()
+	results = fc.compute(self)
 	nlen = results.N()
 	table_ce = results.table_ce()
 	scen_list = results.scen_list()
@@ -135,9 +137,11 @@ def process():
 	# print('iniciando apply_async')
 	filecookie = request.cookies.get('filename')
 	fullfilename = json.loads(filecookie)['file']
+	fc = alm.FileComputation(fullfilename)
+	# import ipdb; ipdb.set_trace()
 	print('longtask')
 	print(fullfilename)
-	task = long_task.apply_async((fullfilename,))
+	task = long_task.apply_async((fc,))
 	# import pdb; pdb.set_trace()
 	print('task is {}: '.format(type(task)))
 	print('task result is from logn task : {}'.format(type(task.result)) )

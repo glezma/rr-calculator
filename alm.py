@@ -439,7 +439,7 @@ import openpyxl as opxl
 import xl_tools as xl
 
 class FileComputation:
-	def __init__(self, filename,task):
+	def __init__(self, filename):
 		wb = opxl.load_workbook(filename, data_only=True, use_iterators=False)
 		xl_gap_MN = xl.xl_load(wb, 'gap_mn')
 		xl_tt_MN = xl.xl_load(wb, 'tt_mn')
@@ -474,10 +474,10 @@ class FileComputation:
 		
 		self.eng = eng
 		self.n_sim = n_sim
-		self.task = task
+		# self.task = task
 
-	def compute(self):
-		results = self.eng.compute(self.n_sim,self.task)
+	def compute(self,task):
+		results = self.eng.compute(self.n_sim,task)
 		return results
 
 
