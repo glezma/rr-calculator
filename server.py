@@ -1,7 +1,7 @@
 import os
 from flask import (render_template, Flask, request, make_response, 
 					redirect, url_for, session, jsonify,Markup )
-import plotly
+#import plotly
 from flask.ext.bootstrap import Bootstrap
 
 import numpy as np
@@ -28,7 +28,7 @@ app.config['SECRET_KEY'] = 'top secret!'
 bootstrap = Bootstrap(app)
 
 # Celery configuration
-# direccion_redis = 'redis://localhost:6379/0'
+direccion_redis = 'redis://localhost:6379/0'
 direccion_redis = 'redis://h:p5t6n5r06k8kk01ls0655a1qvdi@ec2-107-22-196-235.compute-1.amazonaws.com:13319'
 
 app.config['CELERY_BROKER_URL'] = direccion_redis
