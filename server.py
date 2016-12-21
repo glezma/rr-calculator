@@ -29,7 +29,7 @@ bootstrap = Bootstrap(app)
 
 # Celery configuration
 direccion_redis = 'redis://localhost:6379/0'
-direccion_redis = 'redis://h:p2f1ag9gudjqjva7l5evg3ut5f9@ec2-174-129-243-209.compute-1.amazonaws.com:21849'
+direccion_redis = 'redis://h:p2f4e2dc26bd9bd22de9ac82b66cb3f72c77d5b987331948e2db4d815573b0d88@ec2-184-72-246-90.compute-1.amazonaws.com:18049'
 
 app.config['CELERY_BROKER_URL'] = direccion_redis
 app.config['CELERY_RESULT_BACKEND'] = direccion_redis
